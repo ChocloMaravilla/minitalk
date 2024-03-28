@@ -6,27 +6,44 @@
 /*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:08:53 by rmedina-          #+#    #+#             */
-/*   Updated: 2024/03/26 22:45:26 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/03/28 15:07:18 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
-
-static int  send_length(int pid, char *str)
+static int send_str(int pid, char *str)
 {
 	size_t	len;
 	int		octet;
-
+	octet = 0;
+	len = ft_strlen(str);
+	while (octet < 8)
+	{
+		if (((len >> octet) & 1) == 1) 
+			kill(pid, SIGUSR1);
+		else if (((len >> octet) & 1) == 0)
+			kill(pid, SIGUSR2);
+		octet++;
+		usleep(200);
+	}
+	return (SUCCESS);
+}
+static int  send_length(int pid, char *str)
+{
+	int		len;
+	int		octet;
 	octet = 0;
 	len = ft_strlen(str);
 	while (octet < 32)
 	{
-		if ((len & (1 << octet)) == 1)
+		if (((len >> octet) & 1)) 
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
 		octet++;
+		usleep(200);
 	}
+	
 	return (SUCCESS);
 }
 
@@ -55,5 +72,6 @@ int main(int argc, char **argv)
 		return (ERROR);
 	pid = ft_atoi(argv[1]);
 	send_length(pid, argv[2]);
+	send_str(pid, argv[2]);
 	return (SUCCESS);
 }

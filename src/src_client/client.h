@@ -6,7 +6,7 @@
 /*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:05:08 by rmedina-          #+#    #+#             */
-/*   Updated: 2024/03/26 23:01:08 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/03/28 01:23:55 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define CLIENT_H
 
 # define SUCCESS 0
-# define ERROR -1
+# define ERROR 1
 
 # include <unistd.h>
 # include <stdio.h>
