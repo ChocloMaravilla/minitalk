@@ -6,7 +6,7 @@
 /*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:08:53 by rmedina-          #+#    #+#             */
-/*   Updated: 2024/04/01 20:17:26 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/02 20:51:08 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,18 @@ static int send_str(int pid, char *str)
 	octet = 0;
 	count = 0;
 	len = ft_strlen(str);
-	while (octet < 8)
+	while (count < len)
 	{
-		if (((str[count] >> octet) & 1)) 
-			kill(pid, SIGUSR1);
-		else
-			kill(pid, SIGUSR2);
-		octet++;
-		usleep(200);
+		while(octet < 8)
+		{
+			if (((str[count] >> octet) & 1) == 1)
+				kill(pid, SIGUSR1);
+			else if(((str[count] >> octet) & 1) == 0)
+				kill(pid, SIGUSR2);
+			usleep(200);
+			octet++;
+		}
+		count++;
 	}
 	return (SUCCESS);
 }
@@ -38,7 +42,7 @@ static int  send_length(int pid, char *str)
 	len = ft_strlen(str);
 	while (octet < 32)
 	{
-		if (((len >> octet) & 1))
+		if (((len >> octet) & 1) == 1)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);

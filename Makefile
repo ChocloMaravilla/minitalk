@@ -36,7 +36,7 @@ CC	= 				cc
 RM	= 				rm -f
 FLAGS	=  			-Wall -Wextra -Werror
 #--------------#REGLAS#-----------------#
-all: $(NAME_CLIENT) $(NAME_SERVER) $(DDLB_NAME_SERVER)
+all: $(NAME_CLIENT) $(NAME_SERVER)
 	
 $(LIBFT):
 	@make -C $(LIBFT_DIR) --no-print-directory
