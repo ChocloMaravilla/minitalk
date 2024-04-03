@@ -6,7 +6,7 @@
 /*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 20:42:51 by rmedina-          #+#    #+#             */
-/*   Updated: 2024/04/02 21:11:15 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/03 21:09:33 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,9 @@ static void handlesignals(int sig)
 		count++;
 		if(count == 32)
 		{
-			printf("#------TEST_DEBUGER_FLAG_1------#\n");
-			str = (char *)malloc(sizeof(char)*(lenght + 1));
-			iterator = lenght;
+			str = ft_calloc(1,lenght);
 			flag = 1;
 			count = 0;
-			printf("lenght_count: %i\n", lenght);
 			lenght = 0;
 		}
 	}
@@ -44,25 +41,18 @@ static void handlesignals(int sig)
 		else
 			str[lenght] = (str[lenght] | (0 << count));
 		count++;
-		// ft_printf("count_me: %i\n", count);
 		if(count == 8)
 		{
-			printf("#-----TEST_DEBUGER_FLAG_2------#\n");
-			printf("str: %c\n", str[lenght]);
-			lenght++;
-			if(str[lenght] == '\0')
+			if (str[lenght] == '\0')
 			{
-				// ft_printf("\nlenght_str :%i\n", lenght);
-				// ft_printf("flag: %i\n", flag);
-				// ft_printf("str: %c\n", str[lenght]);
 				ft_printf("%s\n", str);
 				free(str);
 				lenght = 0;
-				count = 0;
 				flag = 0;
 			}
-			printf("Pasa por aqui\n");
-			// lenght = 0;
+			else
+				lenght++;
+			count = 0;
 		}
 	}
 }

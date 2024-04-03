@@ -6,7 +6,7 @@
 /*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:08:53 by rmedina-          #+#    #+#             */
-/*   Updated: 2024/04/02 20:51:08 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/03 20:11:20 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ static int send_str(int pid, char *str)
 	size_t	len;
 	int	octet;
 	int	count;
-	octet = 0;
 	count = 0;
 	len = ft_strlen(str);
-	while (count < len)
+	while (count <= len)
 	{
+		octet = 0;
 		while(octet < 8)
 		{
 			if (((str[count] >> octet) & 1) == 1)
@@ -71,7 +71,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		write(2, "Error argumentos", 17);
+		write(2, "Error to many or few arguments", 31);
 		return (ERROR);
 	}
 	if (checking_pid(argv[1]) == ERROR)
