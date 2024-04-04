@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruben <ruben@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 17:51:23 by ruben             #+#    #+#             */
-/*   Updated: 2023/10/22 20:04:16 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:07:16 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,3 @@ int	ft_atoi(const char *str)
 	return (nb * sign);
 }
 
-// int main()
-// {
-//     char *str = "06050";
-//     int result = ft_atoi(str);
-//     printf("%d", result);
-//     return (0);
-// } cap de suro

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruben <ruben@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 14:45:10 by ruben             #+#    #+#             */
-/*   Updated: 2023/10/22 19:56:41 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:06:16 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[i] = 0;
 	return (str);
 }
-/*
- int main()
- {
-		char *a = "cbaabcccccbbab";
-		char *b = "abc";
-		printf("%s",ft_strtrim(a, b));
-		return (0);
- }
- */
+

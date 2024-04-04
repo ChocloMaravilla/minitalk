@@ -6,14 +6,15 @@
 /*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:08:53 by rmedina-          #+#    #+#             */
-/*   Updated: 2024/04/03 20:11:20 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/04 23:36:01 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "client.h"
+#include "../src_header/minitalk.h"
+
 static int send_str(int pid, char *str)
 {
-	size_t	len;
+	int	len;
 	int	octet;
 	int	count;
 	count = 0;
@@ -47,7 +48,7 @@ static int  send_length(int pid, char *str)
 		else
 			kill(pid, SIGUSR2);
 		octet++;
-		usleep(200);
+		usleep(150);
 	}
 	
 	return (SUCCESS);

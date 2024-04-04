@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruben <ruben@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 22:53:44 by ruben             #+#    #+#             */
-/*   Updated: 2023/10/22 08:27:11 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:06:32 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,3 @@ char	*ft_strdup(const char *s)
 	return (a);
 }
 
-// int main()
-// {
-//     char *a = "hola";
-//     char *b;
-//     b = ft_strdup(a);
-//     printf("%s", b);
-//     return (0);
-// }

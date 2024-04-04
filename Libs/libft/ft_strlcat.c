@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruben <ruben@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 16:49:47 by ruben             #+#    #+#             */
-/*   Updated: 2023/10/22 14:55:03 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:06:13 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[f + c] = '\0';
 	return (f + ft_strlen(src));
 }
-/*
-int	main(void)
-{
-	char	src[5] = "hola" ;
-	char	dst[14] = "caracola";
 
-	ft_strlcat(dst, src, 5);
-	printf("%s", dst);
-	return (0);
-}
-*/

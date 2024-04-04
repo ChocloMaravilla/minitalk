@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruben <ruben@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 19:03:36 by ruben             #+#    #+#             */
-/*   Updated: 2023/10/22 16:41:36 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:06:19 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,4 @@ int	ft_tolower(int c)
 		return (c);
 	}
 }
-/*
-int	main(void)
-{
-	char	src;
 
-	src = 'A';
-	printf("%c", ft_tolower(src));
-	return (0);
-}
-*/

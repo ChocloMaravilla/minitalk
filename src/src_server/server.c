@@ -6,12 +6,35 @@
 /*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 20:42:51 by rmedina-          #+#    #+#             */
-/*   Updated: 2024/04/03 21:09:33 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/04 23:36:07 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "server.h"
+#include "../src_header/minitalk.h"
 
+void str_fill(int *lenght, int *flag, char **str, int *count)
+{
+	if ((*str)[*lenght] == '\0')
+		reset_var(str, lenght, flag);
+	else
+		*lenght += 1;
+	*count = 0;
+}
+void reset_var(char **str, int *lenght, int *flag)
+{
+	ft_printf("%s\n", *str);
+	free(*str);
+	*lenght = 0;
+	*flag = 0;
+}
+
+void str_memory(int *lenght, int *flag, char **str, int *count)
+{
+	*str = ft_calloc(1, *lenght);
+	*flag = 1;
+	*count = 0;
+	*lenght = 0;
+}
 static void handlesignals(int sig)
 {
 	static int count = 0;
@@ -23,37 +46,17 @@ static void handlesignals(int sig)
 	{
 		if(sig == SIGUSR1)
 			lenght |= (1 << count);
-		else
-			lenght |= (0 << count);
 		count++;
 		if(count == 32)
-		{
-			str = ft_calloc(1,lenght);
-			flag = 1;
-			count = 0;
-			lenght = 0;
-		}
+			str_memory(&lenght, &flag,  &str, &count);
 	}
 	else
 	{
 		if(sig == SIGUSR1)
 			str[lenght] = (str[lenght] | (1 << count));
-		else
-			str[lenght] = (str[lenght] | (0 << count));
 		count++;
 		if(count == 8)
-		{
-			if (str[lenght] == '\0')
-			{
-				ft_printf("%s\n", str);
-				free(str);
-				lenght = 0;
-				flag = 0;
-			}
-			else
-				lenght++;
-			count = 0;
-		}
+			str_fill(&lenght, &flag, &str, &count);
 	}
 }
 
@@ -63,12 +66,12 @@ int main(void)
 
 	pid = getpid();
 	ft_printf("%i\n", pid);
-	if((signal(SIGUSR1, handlesignals)) == SIG_ERR)
+	if((signal(SIGUSR1, handlesignals)) == ((void *)ERROR_SIGNAL))
 	{
 		write(2,"Error en el manejo de señales con el signal",45);
 		return (ERROR);
 	}
-	else if((signal(SIGUSR2, handlesignals)) == SIG_ERR)
+	else if((signal(SIGUSR2, handlesignals)) == ((void *)ERROR_SIGNAL))
 	{
 		write(2,"Error en el manejo de señales con el signal",45);
 		return (ERROR);

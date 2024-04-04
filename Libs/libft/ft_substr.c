@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruben <ruben@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 00:31:22 by ruben             #+#    #+#             */
-/*   Updated: 2023/10/22 15:45:13 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:06:18 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (a);
 }
 
-//  int main()
-// {
-//     char *a = "01234";
-//     printf("%s", ft_substr(a, 10, 10));
-//     return (0);
-// }

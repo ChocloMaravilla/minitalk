@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruben <ruben@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 19:03:50 by ruben             #+#    #+#             */
-/*   Updated: 2023/10/22 18:57:18 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:06:16 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (0);
 }
 
-// int main()
-// {
-//     char *str = "Buenos dias";
-//     char *cha = "o";
-//     char *result;
-//     size_t len = ft_strlen(str);
-
-//     result = ft_strnstr(str, cha, len);
-//     printf("%s", result);
-//     return (0);
-// }

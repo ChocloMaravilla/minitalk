@@ -43,16 +43,13 @@ RM	= 	rm -f
 LIBC	= 	ar -rcs
 FLAGS	= 	-Wall -Wextra -Werror
 
-%.o:%.c Makefile ${HEADER}
+%.o:%.c ${HEADER}
 	${CC} ${FLAGS} -c $< -o $@
 
-$(NAME):: ${OBJS} ${HEADER} 
+$(NAME): Makefile ${OBJS} ${HEADER} 
 	$(LIBC) $(NAME) $(OBJS)
 
 all: $(NAME)
-
-# bonus:	$(NAME) $(HEADER)
-# 	$(LIBC) $(NAME)
 
 fclean: clean
 	$(RM) $(NAME)
