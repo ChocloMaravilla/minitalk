@@ -6,7 +6,7 @@
 /*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:08:53 by rmedina-          #+#    #+#             */
-/*   Updated: 2024/04/04 23:36:01 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/06 21:08:29 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static int send_str(int pid, char *str)
 {
-	int	len;
-	int	octet;
-	int	count;
+	unsigned int	len;
+	unsigned int	octet;
+	unsigned int	count;
 	count = 0;
 	len = ft_strlen(str);
 	while (count <= len)
@@ -37,8 +37,8 @@ static int send_str(int pid, char *str)
 }
 static int  send_length(int pid, char *str)
 {
-	int		len;
-	int		octet;
+	unsigned int		len;
+	unsigned int		octet;
 	octet = 0;
 	len = ft_strlen(str);
 	while (octet < 32)
