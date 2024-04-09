@@ -6,7 +6,7 @@
 /*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 18:08:53 by rmedina-          #+#    #+#             */
-/*   Updated: 2024/04/06 21:08:29 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/09 21:27:31 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int send_str(int pid, char *str)
 }
 static int  send_length(int pid, char *str)
 {
-	unsigned int		len;
+	int		len;
 	unsigned int		octet;
 	octet = 0;
 	len = ft_strlen(str);
@@ -54,7 +54,7 @@ static int  send_length(int pid, char *str)
 	return (SUCCESS);
 }
 
-static int checking_pid(char *argv)
+static int checking_pid( char *argv)
 {
 	int	i;
 
@@ -70,6 +70,8 @@ int main(int argc, char **argv)
 {
 	int	pid;
 
+	if(!argv[2] || argv[2] == NULL)
+		return (0);
 	if (argc != 3)
 	{
 		write(2, "Error to many or few arguments", 31);
