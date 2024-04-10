@@ -6,13 +6,13 @@
 /*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 20:42:51 by rmedina-          #+#    #+#             */
-/*   Updated: 2024/04/09 22:18:58 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/10 21:31:21 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src_header/minitalk.h"
 
-void str_fill(unsigned int *lenght, int *flag, unsigned char **str, int *count)
+void str_fill( int *lenght, int *flag, char **str, int *count)
 {
 	if ((*str)[*lenght] == '\0')
 		reset_var(str, lenght, flag);
@@ -20,17 +20,19 @@ void str_fill(unsigned int *lenght, int *flag, unsigned char **str, int *count)
 		*lenght += 1;
 	*count = 0;
 }
-void reset_var(unsigned char **str, unsigned int *lenght, int *flag)
+void reset_var( char **str, int *lenght, int *flag)
 {
 	ft_printf("%s\n", *str);
 	free(*str);
+	*str = NULL;
 	*lenght = 0;
 	*flag = 0;
 }
 
-void str_memory( unsigned int *lenght, int *flag, unsigned char **str, int *count)
+void str_memory(int *lenght, int *flag, char **str, int *count)
 {
-	*str = (unsigned char *)malloc(sizeof(*lenght));
+	*str = ft_calloc(sizeof(char) , (*lenght + 1));
+	(*str)[*lenght] = '\0';
 	*flag = 1;
 	*count = 0;
 	*lenght = 0;
@@ -38,9 +40,9 @@ void str_memory( unsigned int *lenght, int *flag, unsigned char **str, int *coun
 static void handlesignals(int sig)
 {
 	static int count = 0;
-	static unsigned int lenght = 0;
+	static int lenght = 0;
 	static int flag = 0;
-	static unsigned char *str;
+	static char *str;
 	
 	if(flag == 0)
 	{

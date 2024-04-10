@@ -6,7 +6,7 @@
 /*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 21:47:55 by rmedina-          #+#    #+#             */
-/*   Updated: 2024/04/09 22:10:25 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:21:10 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # include "../../Libs/ft_printf/ft_printf.h"
 # include "../../Libs/libft/libft.h"
 
-void reset_var( unsigned char **str,  unsigned int *lenght, int *flag);
+void reset_var( char **str, int *lenght, int *flag);
 typedef struct s_ints
 {
     int boolean;

@@ -14,7 +14,6 @@ CC = gcc
 RM = rm -f
 LIBC = ar -rcs
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address
-
 %.o: %.c  
 	${CC} ${CFLAGS} -I ./src/src_header/minitalk.h  -c $< -o ${<:.c=.o}
 
