@@ -6,12 +6,12 @@
 /*   By: rmedina- <rmedina-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 21:47:55 by rmedina-          #+#    #+#             */
-/*   Updated: 2024/04/10 18:21:10 by rmedina-         ###   ########.fr       */
+/*   Updated: 2024/04/10 22:11:55 by rmedina-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVER_H
-# define SERVER_H
+#ifndef MINITALK_H
+# define MINITALK_H
 
 # define SUCCESS 0
 # define ERROR 1
@@ -24,13 +24,5 @@
 # include "../../Libs/ft_printf/ft_printf.h"
 # include "../../Libs/libft/libft.h"
 
-void reset_var( char **str, int *lenght, int *flag);
-typedef struct s_ints
-{
-    int boolean;
-    int current_bit;
-    int len_malloc;
-}   t_ints;
-
-
+void	reset_var(char **str, int *lenght, int *flag);
 #endif
